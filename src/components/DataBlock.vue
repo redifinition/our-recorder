@@ -1,6 +1,6 @@
 <template>
   <div id = "DataBlock">
-    <el-card style="border-radius: 10px;width: 100%;min-width: 300px">
+    <el-card style="border-radius: 10px;width: 100%;min-width: 200px">
       <h1 style="font-weight: lighter;text-align: left;margin-block-start: 0">在一起已经{{togetherDayNum}}天</h1>
       <div style="display: flex;align-items:center;width: 100%;height: 100%">
         <el-avatar class = "user-avatar" :src="avatar"></el-avatar>
@@ -68,6 +68,10 @@ export default {
 
   .last-record-font{
     font-weight: lighter;
+  }
+
+  .is-selected {
+    color: #008080FF;
   }
 
   @media screen and (max-width: 1000px) {
