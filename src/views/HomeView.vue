@@ -11,7 +11,16 @@
             <el-image :src="require('../assets/image/dog.png')" class="small-img"></el-image>
             <h1>乔乔最近的记录～</h1>
           </div>
-          <reward-card style="margin-top: 20px"></reward-card>
+          <div style="display: flex;justify-content: space-between;flex-wrap: wrap">
+            <reward-card
+                v-for="record in records"
+                style="margin-top: 20px"
+                v-bind:record-url="record.recordUrl"
+                      :record-content="record.recordContent"
+                      :type="record.type"
+                      :record-date="record.recordDate"
+                      :record-point="record.recordPoint"></reward-card>
+          </div>
         </el-main>
       </el-container>
     </el-container>
@@ -37,13 +46,29 @@ export default {
   },
   data(){
     return{
+      records:[
+        {
+          recordUrl: 'https://joes-bucket.oss-cn-shanghai.aliyuncs.com/img/u=3820118474,1319716523&fm=224&app=112&f=JPEG.jpeg',
+          recordContent: '乔乔买了Zisga森林漫步的盲盒！dwddwwddwddwdwdwdwddwdw',
+          type: 1,
+          recordPoint: 7,
+          recordDate: '2022-09-02 23:11',
+        },
+        {
+          recordUrl: 'https://joes-bucket.oss-cn-shanghai.aliyuncs.com/img/u=3820118474,1319716523&fm=224&app=112&f=JPEG.jpeg',
+          recordContent: '乔乔买了Zisga森林漫步的盲盒！dwddwwddwddwdwdwdwddwdw',
+          type: 1,
+          recordPoint: 7,
+          recordDate: '2022-09-02 23：11',
+        },
+      ]
     }
   },
   methods:{}
 }
 </script>
 
-<style>
+<style scoped>
   h1{
     font-weight: lighter;
     text-align: left;
